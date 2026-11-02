@@ -1,0 +1,12 @@
+node_modules/
+
+.env
+.env.*
+!.env.example
+
+AERO_FRONT/dist/
+AERO_BACK/dist/
+AERO_BACK/uploads/
+coverage/
+.DS_Store
+npm-debug.log*

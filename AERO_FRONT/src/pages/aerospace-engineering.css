@@ -1,0 +1,400 @@
+.aero-discover {
+  padding: 74px 0;
+  color: #fff;
+  background: #102943;
+}
+.aero-discover-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 72px;
+}
+.aero-discover-image {
+  position: relative;
+  min-height: 310px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.aero-discover-image img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+}
+.aero-discover-image::after {
+  position: absolute;
+  inset: 35% 0 0;
+  content: '';
+  background: linear-gradient(transparent, rgba(7, 20, 34, .72));
+}
+.aero-discover-image-label {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  left: 22px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+.aero-discover-image-label svg { color: #a9cbff; }
+.aero-discover-copy .eyebrow,
+.aero-page-intro .eyebrow { color: #91bbff; }
+.aero-discover-copy h2 {
+  max-width: 470px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+}
+.aero-discover-copy p {
+  max-width: 470px;
+  margin-bottom: 23px;
+  color: #c3d0df;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.aero-page-intro {
+  overflow: hidden;
+  padding: 44px 0 62px;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 12% 90%, rgba(52, 120, 229, .17), transparent 38%),
+    #0d233b;
+}
+.aero-page-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+  align-items: center;
+  gap: 58px;
+}
+.aero-page-intro-copy .breadcrumb { color: #aabbd0; }
+.aero-page-intro-copy .breadcrumb strong { color: #e3edfa; }
+.aero-page-intro h1 {
+  max-width: 800px;
+  margin-bottom: 17px;
+  color: #fff;
+  font-size: clamp(39px, 5vw, 60px);
+  line-height: 1.12;
+  letter-spacing: -2.7px;
+}
+.aero-page-intro h1 span { color: #91bbff; }
+.aero-page-intro-copy > p {
+  max-width: 600px;
+  margin-bottom: 0;
+  color: #c3d0df;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.aero-page-intro-image {
+  position: relative;
+  height: 330px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 5px;
+}
+.aero-page-intro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aero-page-intro-image::after {
+  position: absolute;
+  inset: 45% 0 0;
+  content: '';
+  background: linear-gradient(transparent, rgba(7, 20, 34, .78));
+}
+.aero-page-image-caption {
+  position: absolute;
+  z-index: 1;
+  right: 20px;
+  bottom: 19px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+.aero-page-image-caption svg { color: #9cc4ff; }
+.aero-work-section,
+.aero-branches-section,
+.aero-subjects-section,
+.aero-careers-section,
+.aero-skills-section { background: var(--site-surface-alt); }
+.aero-work-section { padding-bottom: 78px; }
+.aero-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 32px;
+}
+.aero-section-heading > div { max-width: 690px; }
+.aero-section-heading .eyebrow { margin-bottom: 10px; }
+.aero-section-heading h2,
+.aero-skills-copy h2 {
+  margin-bottom: 11px;
+  color: var(--navy);
+  font-size: clamp(28px, 3.2vw, 38px);
+  line-height: 1.18;
+  letter-spacing: -1.5px;
+}
+.aero-section-heading p,
+.aero-skills-copy > p {
+  max-width: 630px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.aero-section-emblem {
+  display: grid;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  color: var(--blue);
+  border: 1px solid var(--site-border);
+  border-radius: 50%;
+  background: var(--site-surface-alt);
+}
+.aero-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+.aero-info-card,
+.aero-subject-card,
+.aero-career-card {
+  padding: 22px;
+  border: 1px solid var(--site-border);
+  border-radius: 5px;
+  background: var(--site-card);
+}
+.aero-info-card { min-height: 204px; }
+.aero-card-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 17px;
+  place-items: center;
+  color: var(--blue);
+  border-radius: 50%;
+  background: var(--site-surface-alt);
+}
+.aero-info-card h3,
+.aero-subject-card h3,
+.aero-career-card h3 {
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: -.3px;
+}
+.aero-info-card p,
+.aero-subject-card p,
+.aero-career-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+.aero-branch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.aero-branch-card {
+  padding: 27px 29px 24px;
+  border: 1px solid var(--site-border);
+  border-radius: 5px;
+  background: var(--site-card);
+}
+.aero-branch-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 23px;
+  place-items: center;
+  color: #3478e5;
+  border-radius: 50%;
+  background: #edf5ff;
+}
+.aero-branch-space .aero-branch-icon {
+  color: #7857cb;
+  background: #f2edff;
+}
+.aero-card-label {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+.aero-branch-card h3 {
+  margin-bottom: 10px;
+  color: var(--navy);
+  font-size: 22px;
+  letter-spacing: -.6px;
+}
+.aero-branch-card > p {
+  max-width: 500px;
+  min-height: 62px;
+  margin-bottom: 21px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.aero-example {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 15px;
+  border-top: 1px solid var(--site-border);
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+.aero-example strong { color: var(--navy); font-size: 10px; }
+.aero-subject-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.aero-subject-card { min-height: 212px; }
+.aero-subject-card .aero-card-icon { margin-bottom: 15px; }
+.aero-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 21px 0 0;
+  padding: 15px 17px;
+  color: var(--site-text-soft);
+  border-left: 3px solid var(--blue);
+  background: var(--site-surface-alt);
+  font-size: 11px;
+  line-height: 1.7;
+}
+.aero-note svg { flex: 0 0 18px; color: var(--blue); }
+.aero-career-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.aero-career-card { min-height: 195px; }
+.aero-career-card .aero-card-icon { margin-bottom: 15px; }
+.aero-qualification-note {
+  max-width: 850px;
+  margin: 21px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+.aero-skills-section { padding-top: 82px; padding-bottom: 88px; }
+.aero-skills-layout {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  align-items: center;
+  gap: 72px;
+}
+.aero-skills-copy h2 { max-width: 460px; }
+.aero-skills-copy > p { margin-bottom: 23px; }
+.aero-skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.aero-skills-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 55px;
+  padding: 13px;
+  color: var(--site-text);
+  border: 1px solid var(--site-border);
+  border-radius: 4px;
+  background: var(--site-card);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.aero-skills-list li > span {
+  display: grid;
+  flex: 0 0 21px;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  color: var(--blue);
+  border-radius: 50%;
+  background: var(--site-surface-alt);
+}
+body[data-theme='dark'] .aero-branch-icon {
+  color: #9bc4ff;
+  background: rgba(52,120,229,.16);
+}
+body[data-theme='dark'] .aero-branch-space .aero-branch-icon {
+  color: #c2a9ff;
+  background: rgba(120,87,203,.2);
+}
+
+@media (max-width: 900px) {
+  .aero-discover-grid { gap: 40px; }
+  .aero-page-intro-grid { grid-template-columns: 1fr .85fr; gap: 32px; }
+  .aero-page-intro-image { height: 300px; }
+  .aero-work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .aero-subject-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .aero-skills-layout { gap: 40px; }
+}
+
+@media (max-width: 680px) {
+  .aero-discover { padding: 57px 0; }
+  .aero-discover-grid,
+  .aero-page-intro-grid,
+  .aero-skills-layout { grid-template-columns: 1fr; gap: 26px; }
+  .aero-discover-image { min-height: 0; }
+  .aero-discover-image img { height: clamp(215px, 62vw, 330px); }
+  .aero-discover-copy h2 { font-size: 32px; }
+  .aero-discover-copy p { font-size: 12px; }
+  .aero-page-intro { padding: 27px 0 46px; }
+  .aero-page-intro-grid { gap: 28px; }
+  .aero-page-intro-copy .breadcrumb { margin-bottom: 27px; }
+  .aero-page-intro h1 { font-size: clamp(38px, 10vw, 52px); letter-spacing: -2px; }
+  .aero-page-intro-copy > p { font-size: 12px; }
+  .aero-page-intro-image { height: clamp(215px, 62vw, 330px); }
+  .aero-section-heading { align-items: flex-start; margin-bottom: 25px; }
+  .aero-section-heading h2,
+  .aero-skills-copy h2 { font-size: 29px; }
+  .aero-section-heading p,
+  .aero-skills-copy > p { font-size: 12px; }
+  .aero-work-grid,
+  .aero-branch-grid,
+  .aero-career-grid { grid-template-columns: 1fr; gap: 11px; }
+  .aero-info-card { min-height: 0; }
+  .aero-info-card,
+  .aero-subject-card,
+  .aero-career-card { padding: 19px; }
+  .aero-branch-card { padding: 22px 20px; }
+  .aero-branch-card > p { min-height: 0; }
+  .aero-subject-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .aero-subject-card { min-height: 0; }
+  .aero-subject-card h3 { font-size: 13px; }
+  .aero-subject-card p { font-size: 10px; }
+  .aero-skills-layout { gap: 24px; }
+  .aero-skills-list { gap: 8px; }
+  .aero-skills-list li { padding: 11px; font-size: 10px; }
+}
+
+@media (max-width: 390px) {
+  .aero-subject-grid,
+  .aero-skills-list { grid-template-columns: 1fr; }
+  .aero-section-emblem { flex-basis: 44px; width: 44px; height: 44px; }
+}
