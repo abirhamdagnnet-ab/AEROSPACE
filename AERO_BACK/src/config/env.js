@@ -44,6 +44,9 @@ export function validateEnvironment(env = process.env) {
   if (env.DATABASE_SSL !== undefined && !['true', 'false'].includes(env.DATABASE_SSL)) {
     throw new Error('DATABASE_SSL must be true or false.')
   }
+  if (env.DATABASE_SSL_REJECT_UNAUTHORIZED !== undefined && !['true', 'false'].includes(env.DATABASE_SSL_REJECT_UNAUTHORIZED)) {
+    throw new Error('DATABASE_SSL_REJECT_UNAUTHORIZED must be true or false.')
+  }
   if (production && env.DATABASE_SSL !== 'true') {
     throw new Error('DATABASE_SSL=true is required in production.')
   }

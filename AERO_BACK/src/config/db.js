@@ -16,6 +16,7 @@ export function createPool({
   if (typeof tlsEnabled !== 'boolean') {
     throw new Error('DATABASE_SSL must be true or false.')
   }
+  const rejectUnauthorized = process.env.DATABASE_SSL_REJECT_UNAUTHORIZED !== 'false'
 
   const max = Number(process.env.DATABASE_POOL_MAX || 10)
   if (!Number.isInteger(max) || max < 1 || max > 50) {
@@ -24,7 +25,7 @@ export function createPool({
 
   return new Pool({
     connectionString,
-    ssl: tlsEnabled ? { rejectUnauthorized: true } : undefined,
+    ssl: tlsEnabled ? { rejectUnauthorized } : undefined,
     max,
     idleTimeoutMillis: 30000,
     connectionTimeoutMillis: 10000,

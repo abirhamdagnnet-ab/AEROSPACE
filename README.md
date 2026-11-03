@@ -41,6 +41,7 @@ Required and optional backend variables:
 | `DATABASE_URL`                          | PostgreSQL URL for the API and local setup scripts. Required.                                       |
 | `DATABASE_MIGRATION_URL`                | Optional locally; required for production migrations and intended for a separate schema-owner role. |
 | `DATABASE_SSL`                          | `true` or `false`. Must be `true` in production; TLS certificates are verified.                     |
+| `DATABASE_SSL_REJECT_UNAUTHORIZED`      | Optional certificate verification override; set to `false` only when the hosted database uses a self-signed certificate. |
 | `DATABASE_POOL_MAX`                     | Optional pool size from 1 to 50; defaults to 10.                                                    |
 | `SESSION_SECRET`                        | Production session/CSRF signing secret, at least 32 characters.                                     |
 | `CLIENT_URL`                            | Comma-separated frontend origins allowed by CORS, e.g. `http://localhost:5173`.                     |
