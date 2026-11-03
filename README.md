@@ -64,7 +64,9 @@ npm run seed
 npm run dev
 ```
 
-The API is available at `http://localhost:5000`. Migrations are versioned SQL files in
+The API is available at `http://localhost:5000`. For local development, set
+`CLIENT_URL=http://localhost:5173,http://localhost:5174` so the backend accepts both
+the public website and the separate admin workspace. Migrations are versioned SQL files in
 `AERO_BACK/migrations`; applied names are recorded in `schema_migrations`. The seed
 script is idempotent and creates clearly labelled sample articles and categories.
 The admin article editor uploads AVIF, JPEG, PNG, and WebP cover images (up to 8 MB);
@@ -83,6 +85,18 @@ npm run dev
 Open `http://localhost:5173`. For a separate API host, configure the frontend build-time
 variable `VITE_API_URL` to the API base URL ending in `/api/v1`; otherwise the frontend
 uses the same-origin `/api/v1` path.
+
+In another PowerShell window, start the separate administrator workspace:
+
+```powershell
+Set-Location .\AERO_ADMIN
+npm install
+npm run dev
+```
+
+Open `http://localhost:5174/admin/login`. The admin app proxies `/api` requests to the
+backend and links back to `http://localhost:5173` by default. Set
+`VITE_PUBLIC_SITE_URL` when the public site is hosted at a different URL.
 
 ## First administrator
 

@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../assets/aerocampus-logo.svg'
 import { adminRequest } from '../../utils/adminApi.js'
 
+const publicSiteUrl = import.meta.env.VITE_PUBLIC_SITE_URL || 'http://localhost:5173'
+
 function AdminLogin() {
   const navigate = useNavigate()
   const [theme] = useState(() => {
@@ -68,11 +70,11 @@ function AdminLogin() {
   return (
     <div className={`admin-app admin-theme-${theme}`}>
       <main className="admin-login-page">
-        <Link className="admin-login-back" to="/"><ArrowLeft size={16} /> Back to AeroCampus</Link>
+        <a className="admin-login-back" href={publicSiteUrl}><ArrowLeft size={16} /> Back to AeroCampus</a>
         <section className="admin-login-card" aria-labelledby="admin-login-title">
-          <Link className="admin-login-brand" to="/">
+          <a className="admin-login-brand" href={publicSiteUrl}>
             <img src={logo} alt="AeroCampus logo" />
-          </Link>
+          </a>
           <span className="admin-eyebrow">Administrator access</span>
           <h1 id="admin-login-title">Welcome back.</h1>
           <p className="admin-login-subtitle">Sign in to manage your aerospace stories.</p>

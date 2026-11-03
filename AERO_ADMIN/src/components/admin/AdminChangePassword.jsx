@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../assets/aerocampus-logo.svg'
 import { adminRequest, setCsrfToken } from '../../utils/adminApi.js'
 
+const publicSiteUrl = import.meta.env.VITE_PUBLIC_SITE_URL || 'http://localhost:5173'
+
 function AdminChangePassword() {
   const navigate = useNavigate()
   const [theme] = useState(() => localStorage.getItem('aerocampus-admin-theme') || 'light')
@@ -71,11 +73,11 @@ function AdminChangePassword() {
   return (
     <div className={`admin-app admin-theme-${theme}`}>
       <main className="admin-login-page">
-        <Link className="admin-login-back" to="/"><ArrowLeft size={16} /> Back to AeroCampus</Link>
+        <a className="admin-login-back" href={publicSiteUrl}><ArrowLeft size={16} /> Back to AeroCampus</a>
         <section className="admin-login-card" aria-labelledby="password-change-title">
-          <Link className="admin-login-brand" to="/">
+          <a className="admin-login-brand" href={publicSiteUrl}>
             <img src={logo} alt="AeroCampus logo" />
-          </Link>
+          </a>
           <span className="admin-eyebrow">SECURE YOUR ACCOUNT</span>
           <h1 id="password-change-title">Change your password.</h1>
           <p className="admin-login-subtitle">Set a new password before continuing to the administrator workspace.</p>

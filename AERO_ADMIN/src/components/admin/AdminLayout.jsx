@@ -18,6 +18,8 @@ import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-do
 import logo from '../../assets/aerocampus-logo.svg'
 import { adminRequest, setCsrfToken } from '../../utils/adminApi.js'
 
+const publicSiteUrl = import.meta.env.VITE_PUBLIC_SITE_URL || 'http://localhost:5173'
+
 const navigation = [
   { to: '/admin/dashboard', label: 'Overview', icon: LayoutDashboard, end: true },
   { to: '/admin/articles', label: 'Articles', icon: BookOpenText },
@@ -125,7 +127,7 @@ function AdminLayout() {
         >
           {theme === 'light' ? <MoonStar size={15} /> : <SunMedium size={15} />}
         </button>
-        <Link className="admin-back-to-site" to="/"><ChevronLeft size={15} /> View public website</Link>
+        <a className="admin-back-to-site" href={publicSiteUrl}><ChevronLeft size={15} /> View public website</a>
         <div className="admin-user">
           <span className="admin-avatar" aria-hidden="true">{user.name.split(' ').map((part) => part[0]).join('').slice(0, 2).toUpperCase()}</span>
           <span className="admin-user-copy"><strong>{user.name}</strong><small>Administrator</small></span>
@@ -140,7 +142,7 @@ function AdminLayout() {
             <Menu size={20} />
           </button>
           <div className="admin-topbar-breadcrumb"><span>Workspace</span><ChevronRight size={14} /><strong>{navigation.find((item) => item.to === location.pathname)?.label || (location.pathname.includes('/categories') ? 'Categories' : location.pathname.includes('/messages') || location.pathname.includes('/contacts') ? 'Contact messages' : location.pathname.includes('/articles') ? 'Articles' : 'Overview')}</strong></div>
-          <Link className="admin-view-site" to="/" target="_blank" rel="noreferrer">View website <ChevronRight size={14} /></Link>
+          <a className="admin-view-site" href={publicSiteUrl} target="_blank" rel="noreferrer">View website <ChevronRight size={14} /></a>
         </header>
         <main className="admin-content">
           <Outlet context={{ user }} />
