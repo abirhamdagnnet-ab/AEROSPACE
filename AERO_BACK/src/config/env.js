@@ -1,5 +1,5 @@
 const DEFAULT_PORT = 5000
-const DEFAULT_CLIENT_URL = 'http://localhost:5173'
+const DEFAULT_CLIENT_URL = 'https://aerospace-1-r55i.onrender.com'
 const VALID_DATABASE_URL = /^postgres(?:ql)?:\/\//
 
 function parseOriginList(value) {
