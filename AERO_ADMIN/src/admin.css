@@ -114,6 +114,7 @@ body { background: #f5f7fa; }
   background: rgba(255,255,255,0.04);
 }
 .admin-app *, .admin-login-page * { box-sizing: border-box; }
+.admin-app a, .admin-login-page a { text-decoration: none; }
 .admin-sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
@@ -285,7 +286,6 @@ body { background: #f5f7fa; }
 .admin-side-draft:hover:not(:disabled) { border-color: #a9c3e3; }
 .admin-side-publish:disabled, .admin-side-draft:disabled { opacity: .55; cursor: not-allowed; }
 .admin-unpublish { width: 100%; margin-top: 13px; padding: 4px; color: #b24e4a; border: 0; background: none; font-size: 9px; cursor: pointer; }
-.admin-unpublish:hover { text-decoration: underline; }
 .admin-field-help { margin: 9px 0 0; color: #b2763d; font-size: 9px; line-height: 1.6; }
 .admin-cover-preview { width: 100%; max-height: 125px; margin-top: 12px; object-fit: cover; border-radius: 3px; }
 .admin-upload-button { display: flex; min-height: 39px; align-items: center; justify-content: center; gap: 8px; padding: 0 10px; color: #315d8c; background: #f3f7fc; border: 1px solid #dfe5eb; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
