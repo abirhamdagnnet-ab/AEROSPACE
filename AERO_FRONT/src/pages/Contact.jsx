@@ -65,7 +65,7 @@ function Contact() {
             <h2>Good conversations start with a hello.</h2>
             <p>We’re growing AeroCampus one curious conversation at a time.</p>
             <a className="contact-info-item" href="mailto:hello@aerocampus.org">
-              <span><Mail size={19} /></span><span><small>Email us</small><strong>hello@aerocampus.org</strong></span>
+              <span><Mail size={19} /></span><span><small>Email us</small><strong>asesa2017.bdu@gmail.com</strong></span>
             </a>
             <div className="contact-info-item">
               <span><MapPin size={19} /></span><span><small>Our focus</small><strong>Learning without borders</strong></span>
