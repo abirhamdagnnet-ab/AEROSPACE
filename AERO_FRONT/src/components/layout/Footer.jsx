@@ -23,7 +23,7 @@ function Footer() {
           <div className="footer-column">
             <h2>Say hello</h2>
             <Link to="/contact">Contact the team <ArrowUpRight size={15} /></Link>
-            <a href="mailto:aerospace@gmail.com">aerospace@gmail.com</a>
+            <a href="mailto:asesa2017.bdu@gmail.com">asesa2017.bdu@gmail.com</a>
             <div className="social-links" aria-label="Social links">
               <a href="https://www.linkedin.com/" aria-label="LinkedIn">
                 <Linkedin size={17} />
