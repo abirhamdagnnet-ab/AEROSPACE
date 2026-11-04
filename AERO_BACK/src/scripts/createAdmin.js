@@ -64,32 +64,45 @@ async function createAdmin() {
     throw new Error('Provide a valid --email address.')
   }
 
-  const password = await askHidden('Administrator password (minimum 14 characters): ')
-  const confirmation = await askHidden('Confirm password: ')
-  if (password.length < 14 || password.length > 200) {
-    throw new Error('Password must be between 14 and 200 characters.')
-  }
-  if (password !== confirmation) throw new Error('Passwords do not match.')
-
+  
   const passwordHash = await bcrypt.hash(password, 12)
-  const { rows } = await pool.query(
-    `INSERT INTO users (name, email, password_hash, role, must_change_password)
-     VALUES ($1, $2, $3, 'admin', TRUE)
-     RETURNING id, name, email, role`,
-    [name, email, passwordHash]
-  )
-  console.log(`Administrator created: ${rows[0].email} (id ${rows[0].id}).`)
-}
 
-try {
-  await createAdmin()
-} catch (error) {
-  if (error.code === '23505') {
-    console.error('An account already exists with that email address.')
-  } else {
-    console.error('Unable to create administrator:', safeDatabaseErrorMessage(error))
+  const client = await pool.connect()
+
+  try {
+    await client.query('BEGIN')
+
+    // Update the existing administrator (ID 2)
+    const { rows } = await client.query(
+      `UPDATE users
+       SET name = $1,
+           email = $2,
+           password_hash = $3,
+           role = 'admin',
+           must_change_password = FALSE
+       WHERE id = 2
+       RETURNING id, name, email, role`,
+      [name, email, passwordHash]
+    )
+
+    if (rows.length === 0) {
+      throw new Error('Administrator with ID 2 was not found.')
+    }
+
+    // Invalidate existing administrator sessions
+    await client.query(
+      'DELETE FROM admin_sessions WHERE user_id = $1',
+      [rows[0].id]
+    )
+
+    await client.query('COMMIT')
+
+    console.log(
+      `Administrator updated successfully: ${rows[0].email}`
+    )
+  } catch (error) {
+    await client.query('ROLLBACK')
+    throw error
+  } finally {
+    client.release()
   }
-  process.exitCode = 1
-} finally {
-  await pool?.end()
-}
