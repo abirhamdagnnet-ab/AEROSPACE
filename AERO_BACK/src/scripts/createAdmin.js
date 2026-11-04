@@ -1,5 +1,4 @@
 import 'dotenv/config'
-import { createInterface } from 'node:readline'
 import { stdin, stdout } from 'node:process'
 import bcrypt from 'bcryptjs'
 import { pool, safeDatabaseErrorMessage } from '../config/db.js'
@@ -65,6 +64,9 @@ async function createAdmin() {
   }
 
   
+  const password = await askHidden('Admin password: ')
+  if (password.length < 8) throw new Error('The password must be at least 8 characters long.')
+
   const passwordHash = await bcrypt.hash(password, 12)
 
   const client = await pool.connect()
@@ -106,3 +108,13 @@ async function createAdmin() {
   } finally {
     client.release()
   }
+}
+
+try {
+  await createAdmin()
+} catch (error) {
+  console.error('Unable to update the administrator:', safeDatabaseErrorMessage(error))
+  process.exitCode = 1
+} finally {
+  await pool?.end()
+}
